@@ -1,0 +1,130 @@
+$font-stack: Arial, Helvetica, sans-serif;
+$light-color: #f1f1f1;
+$primary-color: #0e6cff;
+
+$secondary-color: #ff8700;
+
+@function set-text-color($color) {
+  @if(lightness($color) > 70) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color)
+}
+
+.heading {
+    max-width: 1000px;
+    padding: 0 30px;
+    margin: 0 auto;
+    overflow: auto;
+  }
+  
+  %btn {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin: 3px;
+  
+    &:hover {
+      transform: scale(.88);
+    }
+  }
+  
+  .btn-secondary {
+    @extend %btn;
+    @include set-background($secondary-color);
+  }
+
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    @include set-background($light-color);
+    font-family: $font-stack;
+    line-height: 1.6;
+  }
+  img {
+    width: 400px;
+    height: 350px;
+  }
+  a {
+    text-decoration: none;
+  }
+  select{
+    width:600px; 
+    padding: 10px;
+  }
+  .showcase {
+    @include set-background($primary-color);
+    height: 500px;
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      ul {
+        display: flex;
+        list-style-type: none;
+      }
+      li {
+        padding: 15px;
+        margin-right: 120px;
+      }
+      a {
+        color: set-text-color($primary-color);
+      }
+      a:hover {
+        color: rgb(202, 190, 26);
+      }
+    }
+    &-content {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+  
+      img {
+        width: 100%;
+      }
+  
+      h1 {
+        font-size: 50px;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  .footer{
+    @include set-background($primary-color);
+    padding: 10px;
+    margin: 0 auto;
+    overflow: auto;
+  }
+  
+  @media(max-width: 700px) {
+    .showcase {
+      height: 550px;
+      nav{
+        li {
+          margin-right: 30px;
+        }
+      }
+      &-content {
+        text-align: center;
+  
+        img {
+          display: none;
+        }
+      }
+    }
+    select{
+      width: 300px;
+    }
+  }

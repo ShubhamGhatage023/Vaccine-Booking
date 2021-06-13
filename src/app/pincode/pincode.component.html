@@ -1,0 +1,23 @@
+<div class="container-sm box">
+    <div class="row">
+        <div class="col">
+            <h6>Enter Pincode : </h6>
+            <input type="text" #pincode class="form-control">
+        </div>
+        <div class="col">
+            <h6>Select Date : </h6>
+            <input type="date" (change)="selectChangeHandler($event)" class="form-control">
+        </div>
+    </div><br>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" (click)="onSubmit(pincode.value)" class="btn btn-primary btn-sm">Submit</button>
+    </div>
+    <hr>
+    <h3 class="text-center"><u>Centers</u></h3>
+    <div *ngFor="let center of allCenters" class="centers">
+        <p>Center ID : <b>{{center.center_id}}</b></p>
+        <p>Center Name : <b>{{center.name}}</b></p>
+        <p>Address : <b>{{center.address}}</b></p>
+        <p>Timing : <b>{{center.from}}-{{center.to}}</b></p>
+    </div>
+</div>
