@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaccination Booking</title>
+</head>
+<body>
+  <header class="showcase container-fluid">
+		<div class="heading">
+			<nav style="margin-top: 15px;">
+				<h1 class="logo">Vaccine Booking</h1>
+				<ul>
+					<li><h4>Stay Home! Stay Safe!</h4></li>
+				</ul>
+			</nav>
+	
+			<div class="showcase-content">
+				<div>
+					<h1 class="text-warning">Why is vaccination so important?</h1>
+					<p class="my-6">
+						A vaccine activates our immune system without making us sick. Many dangerous infectious diseases can be prevented in this simple and effective way.
+            A good vaccine will provide adequate and prolonged protection against the disease. The number of doses needed varies from vaccine to vaccine.
+					</p>
+					<!-- <a href="#" class="btn-primary">Learn More</a>
+					<a href="#" class="btn-secondary">Sign Up</a> -->
+				</div>
+				<img src="assets\vaccine-img.png" />
+			</div>
+		</div>
+	</header>
+  <div class="container-fluid mt-3 text-center">
+    <h2 class="display-6"><u> Book your vaccination slot </u></h2><br>
+          <h5>Select State : </h5><br>
+          <select (change)="selectChangeHandler($event)" class="form-select mx-auto" aria-label=".form-select-sm example">  
+            <option>--Select State--</option>
+            <option *ngFor="let state of allStates"  value={{state.state_id}}>{{state.state_name}}</option>
+          </select>
+          <br>
+          <h5>Select District : </h5><br>
+          <select (change)="selectChangeHandler2($event)" class="form-select mx-auto" aria-label=".form-select-sm example">  
+            <option>--Select District--</option>
+            <option *ngFor="let district of allDistricts"  value={{district.district_id}}>{{district.district_name}}</option>
+          </select><br>
+          <a (click)="onGo()" class="btn-secondary">GO ></a>
+  </div><br>
+  <div class="container text-center mx-auto footer">
+    <p>Copyright © Shubham Ghatage 2021 All Rights Reserved</p>
+  </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid px-5 py-2">
+      <a class="navbar-brand">Vaccine Slot Booking</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 650px;"> 
+        <div class="navbar-nav">
+          <a class="nav-link active" routerLink="/booking/pincode">By Pincode&nbsp;<i class="fa fa-search"></i></a>
+          <a class="nav-link active" routerLink="/booking/district">By District&nbsp;<i class="fa fa-search"></i></a>
+          <a class="nav-link active" routerLink="/booking/mylocation">By Current Location&nbsp;<i class="fa fa-search"></i></a>
+        </div>
+      </div>
+    </div>
+</nav>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active caption">
+      <img src="assets\hero-1920-640-spotlight-on-vaccines-covid-hub-hero-block.jpg" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block" style="color: black;">
+        <h3>COVID Cases World-wide</h3>
+        <h4><span class="badge rounded-pill bg-secondary">176,717,055</span></h4>
+        <h3>Deaths World-wide</h3>
+        <h4><span class="badge rounded-pill bg-secondary">3,819,599</span></h4>
+        <h3>Recoverd World-wide</h3>
+        <h4><span class="badge rounded-pill bg-secondary">160,753,418</span></h4>
+      </div>
+    </div>
+    <div class="carousel-item caption">
+      <img src="assets\359858-covid-19-retrospective1600.jpg" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block" style="color: black;">
+        <h3>COVID Cases in India</h3>
+        <h4><span class="badge rounded-pill bg-secondary">29,507,438</span></h4>
+        <h3>Deaths in India </h3>
+        <h4><span class="badge rounded-pill bg-secondary">374,287</span></h4>
+        <h3>Recoverd in India</h3>
+        <h4><span class="badge rounded-pill bg-secondary">28,148,977</span></h4>
+      </div>
+    </div>
+    <div class="carousel-item caption">
+      <img src="assets\covid strain hero compressed.png" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block" style="color: black;">
+        <h2><span class="badge rounded-pill bg-primary">Stay HOME! Stay SAFE!</span></h2>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div><br>
+<router-outlet></router-outlet>
+<br><br>

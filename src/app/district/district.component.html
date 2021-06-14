@@ -1,0 +1,38 @@
+<h3 class="display-6 text-center">Search slots by district selected</h3>
+<div class="container-sm box">
+    <div class="row">
+        <div class="col">
+            <h6>Select Date : </h6>
+            <input type="date" (change)="selectChangeHandler($event)" class="form-control">
+        </div>
+        <div class="d-grid col gap-2 d-md-flex justify-content-md-end me-5 mt-4">
+            <button type="button" (click)="onSubmit()" class="btn btn-primary btn-sm">Submit</button>
+        </div>
+    </div><br>
+    <hr>
+    <div *ngIf="allCenters.length!=0; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+        <h3 class="text-center"><u>Centers</u></h3>
+        <div *ngFor="let center of allCenters" class="row centers">
+            <div class="col-sm-8">
+            <p>Center ID : <b>{{center.center_id}}</b></p>
+            <p>Center Name : <b>{{center.name}}</b></p>
+            <p>Address : <b>{{center.address}}</b></p>
+            <p>Timing : <b>{{center.from}}-{{center.to}}</b></p>
+            <div>Slots : 
+                <p *ngFor="let slots of center.slots" style="display: inline-block;">
+                    <span class="badge rounded-pill bg-primary">{{slots}}</span>&nbsp;
+                </p>
+            </div>
+            </div>
+            <div class="col-sm-4 extra text-center mt-5">
+                <p><span class="badge bg-success">{{center.vaccine}}</span></p>
+                <p><span class="badge bg-warning">{{center.fee_type}}</span></p>
+                <p><span class="badge bg-info">{{center.min_age_limit}}+</span></p>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #elseBlock>
+        <h3 class="text-center">Sorry, no centers avaliable</h3>
+    </ng-template>
+</div>
